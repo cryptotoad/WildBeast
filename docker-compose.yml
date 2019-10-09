@@ -5,6 +5,7 @@ services:
     volumes:
       - ./src:/opt/wildbeast/src
       - ./index.js:/opt/wildbeast/index.js
+      - ./node_modules:/opt/wildbeast/node_modules
     env_file:
       - .env
     links:

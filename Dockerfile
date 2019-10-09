@@ -15,6 +15,7 @@ RUN mkdir /opt/wildbeast && chown wildbeast /opt/wildbeast -R
 COPY . /opt/wildbeast
 WORKDIR /opt/wildbeast
 RUN npm i --production
+
 # Install optional native modules
 RUN npm i zlib-sync uws@10.148.1 https://github.com/discordapp/erlpack.git bufferutil sodium-native node-opus
 
