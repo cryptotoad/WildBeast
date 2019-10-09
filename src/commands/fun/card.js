@@ -1,4 +1,4 @@
-const Deck = require('./libs/deck')
+const Deck = require('../../classes/deck')
 
 module.exports = {
     meta: {

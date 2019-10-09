@@ -1,4 +1,4 @@
-const { resolveTracks, addTracks, hhMMss } = require('../selectors/encoder-selector.js')
+const { resolveTracks, addTracks, hhMMss } = require('../../selectors/encoder-selector.js')
 module.exports = {
   meta: {
     help: 'Add a track to the playback queue.',

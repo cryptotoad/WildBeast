@@ -1,5 +1,5 @@
-const engine = require('../features/settings')
-const driver = require('../selectors/database-selector')
+const engine = require('../../features/settings')
+const driver = require('../../selectors/database-selector')
 const whitelist = [
   'prefix',
   'language',
@@ -53,7 +53,7 @@ module.exports = {
           else parts[1] = parts[1].toLowerCase()
         }
         if (whitelist[index] === 'language') {
-          const languages = require('../internal/dirscan')('../languages')
+          const languages = require('../../internal/dirscan')('../languages')
           if (!languages.includes(`${parts[1]}.json`)) {
             return global.i18n.send('LANGUAGE_UNAVAILABLE', msg.channel, {
               available: languages.map(x => x.match(/(.+).json/)[1]).join(', ')
