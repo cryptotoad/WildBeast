@@ -4,7 +4,7 @@ module.exports = {
     help: 'Add a track to the playback queue.',
     usage: '<song link or YouTube search query>',
     module: 'Music',
-    level: 1,
+    level: 0,
     noDM: true,
     alias: ['play'],
     addons: [

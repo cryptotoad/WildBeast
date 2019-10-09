@@ -14,6 +14,7 @@ module.exports = function (location, opts = {}) {
       let name = file.replace(regex, '')
       result[name] = require(path.resolve(location, name))
     }
-  })
+  });
+
   return result
 }

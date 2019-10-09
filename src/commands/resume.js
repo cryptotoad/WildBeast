@@ -3,7 +3,7 @@ module.exports = {
   meta: {
     help: 'Resume the playback of the current track.',
     module: 'Music',
-    level: 1,
+    level: 0,
     noDM: true
   },
   fn: async (msg) => {

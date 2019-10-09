@@ -11,5 +11,6 @@ module.exports = {
         const role = msg.channel.guild.roles.find(r => r.name.match(regExp));
         let guildMember = msg.member;
         guildMember.removeRole(role.id, `User Validation`).then(() => {});
+        msg.delete()
     }
 }

@@ -4,7 +4,7 @@ module.exports = {
     help: 'Make the bot join a voice channel. Optionally supply a track to play on join.',
     usage: '[song link or YouTube search query]',
     module: 'Music',
-    level: 1,
+    level: 0,
     noDM: true,
     alias: ['voice']
   },

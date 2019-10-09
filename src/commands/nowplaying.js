@@ -3,7 +3,7 @@ module.exports = {
   meta: {
     help: 'Show the currently playing track.',
     module: 'Music',
-    level: 1,
+    level: 0,
     noDM: true,
     alias: ['np']
   },
