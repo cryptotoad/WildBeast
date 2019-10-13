@@ -4,6 +4,7 @@ require('../internal/secrets-loader')
 const tables = [
   'guild_data', // saves guild configurations
   'tags', // saves tags
+  'warns', // saves member warnings
   'system' // misc things
 ]
 
