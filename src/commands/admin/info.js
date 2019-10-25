@@ -26,7 +26,7 @@ module.exports = {
     msg.channel.createMessage({ embed: {
       color: 0x3498db,
       author: { icon_url: bot.user.avatarURL, name: `${bot.user.username}#${bot.user.discriminator} (${bot.user.id})` },
-      title: `Erdnase version ${require('../../../package.json').version} Based on WildBeast version 6.2.1. `,
+      title: `Erdnase Based on WildBeast version 6.2.1. `,
       timestamp: new Date(),
       fields: fields,
       url: 'https://github.com/cryptotoad/WildBeast',

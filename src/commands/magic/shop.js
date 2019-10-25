@@ -48,24 +48,47 @@ module.exports = {
                     description: retVal
                 } });
         });
-        /*
-               request.post('https://i5po43q9gi-dsn.algolia.net/1/indexes/VIProducts/query?x-algolia-agent=Algolia%20for%20JavaScript%20(3.33.0)%3B%20Browser&x-algolia-application-id=I5PO43Q9GI&x-algolia-api-key=5391574bd7f2429fc2151f0e1402fc24', {
-                   //For vanishing, we need to tie into the AJAX endpoint.
-                   json: {
 
-                   }
+        var headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:69.0) Gecko/20100101 Firefox/69.0',
+            'Accept': 'application/json',
+            'Accept-Language': 'en-US,en;q=0.5',
+            'content-type': 'application/x-www-form-urlencoded',
+            'Origin': 'https://www.vanishingincmagic.com',
+            'Connection': 'keep-alive',
+            'Referer': 'https://www.vanishingincmagic.com/search/?q=c&fR[BrandIDs][0]=1&fR[Type][0]=Product',
+            'TE': 'Trailers'
+        };
 
-                }, (err, res, body) => {
-                    if (err) return console.error(err);
-                    console.log(body)
-                    const retVal = '\u200B' +`**Vanishing Inc**: [${$(productText).text()}](https://www.vanishingincmagic.com${$(productURL).prop('href')}) - *${$(productPrice).text().replace(/\s/g,'')}*\t`;
-                    msg.channel.createMessage({ embed: {
-                            color: 0x3498db,
-                            author: { icon_url: bot.user.avatarURL, name: `${bot.user.username}#${bot.user.discriminator} (${bot.user.id})` },
-                            title: `Vanishing Inc`,
-                            description: retVal
-                        } });
-        });
-        */
+        //var dataString = '{requests:[{indexName:VIProducts,params:query=' + encodeURIComponent(suffix) + '&hitsPerPage=12&maxValuesPerFacet=8&page=0&facets=%5B%22type%22%2C%22BrandIDs%22%2C%22Type%22%2C%22ProductType%22%2C%22PriceUSD%22%5D&tagFilters=&facetFilters=%5B%22BrandIDs%3A1%22%2C%22Type%3AProduct%22%5D}]}';
+
+        var dataString = '' +
+            '{"requests":[{"indexName":"VIProducts","params":"query: ' + encodeURIComponent(suffix) + '&' +
+            'hitsPerPage=12' + '&' +
+            'maxValuesPerFacet=8' + '&' +
+            'page=0' + '&' +
+            'facets=["type","BrandIDs","Type","ProductType","PriceUSD"]' + '&' +
+            'tagFilters' + '&' +
+            'facetFilters=["BrandIDs:1","Type:Product"]"}]}'
+
+        var options = {
+            url: 'https://i5po43q9gi-dsn.algolia.net/1/indexes/*/queries?x-algolia-agent=Algolia%20for%20JavaScript%20(3.33.0)%3B%20Browser%3B%20JS%20Helper%20(2.28.0)&x-algolia-application-id=I5PO43Q9GI&x-algolia-api-key=5391574bd7f2429fc2151f0e1402fc24',
+            method: 'POST',
+            headers: headers,
+            body: dataString
+        };
+
+       /* request(options,
+        (err, res, body) => {
+                if (err) return console.error(err);
+                console.log(body)
+                const retVal = '\u200B' +`**Vanishing Inc**: `;
+                msg.channel.createMessage({ embed: {
+                        color: 0x3498db,
+                        author: { icon_url: bot.user.avatarURL, name: `${bot.user.username}#${bot.user.discriminator} (${bot.user.id})` },
+                        title: `Vanishing Inc`,
+                        description: retVal
+                    } });
+            }); */
     }
 }

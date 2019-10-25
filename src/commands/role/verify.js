@@ -12,5 +12,6 @@ module.exports = {
         let guildMember = msg.member;
         guildMember.removeRole(role.id, `User Validation`).then(() => {});
         msg.delete()
+        msg.channel.guild.channels.get("326582158322040842").createMessage('\u200B' + `Welcome to our new member, <@${msg.author.id}>` + suffix)
     }
 }
