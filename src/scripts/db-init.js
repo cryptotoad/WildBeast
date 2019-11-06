@@ -5,6 +5,7 @@ const tables = [
   'guild_data', // saves guild configurations
   'tags', // saves tags
   'warns', // saves member warnings
+  'quotes', //For the quote bot
   'system' // misc things
 ]
 

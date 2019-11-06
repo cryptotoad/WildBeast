@@ -24,6 +24,12 @@ module.exports = {
   getTag: (key) => {
     return module.exports.getArbitrary(key, 'tags')
   },
+  getQuote: (key) => {
+    return module.exports.getArbitrary(key, 'quotes')
+  },
+  getAllQuotes: () => {
+    return db.collection('quotes').all()
+  },
   getArbitrary: async (key, coll) => {
     const collection = db.collection(coll)
     try {
