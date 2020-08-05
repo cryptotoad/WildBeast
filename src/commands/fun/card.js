@@ -8,10 +8,8 @@ module.exports = {
     },
     fn: function (msg, suffix) {
         if (!suffix) {
-            const deck1 = new Deck();
-            deck1.shuffle();
-            msg.channel.createMessage(`<@${msg.author.id}>, You have drawn the ${deck1.deal()}!`)
-        } else {
+            suffix = 1
+        }7
             const deck1 = new Deck();
             ;
             global.logger.log(JSON.stringify(deck1.faro()))
@@ -34,8 +32,7 @@ module.exports = {
             tempStr = (value2 > 0) ? "/" + (value + value2) + ")" : ")"
             hand += " (" + value + tempStr
 
-            msg.channel.createMessage(`<@${msg.author.id}>, You have drawn the ${hand}!`);
-            }
+            msg.channel.createMessage(`<@${msg.author.id}>, You have drawn the ${hand}!`)
         }
 }
 

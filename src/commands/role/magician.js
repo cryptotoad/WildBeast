@@ -5,15 +5,13 @@ module.exports = {
         level: 0
     },
     fn: function (msg, suffix) {
-        const roleToAdd = "Beginner Magician";
-        const regExp = new RegExp(roleToAdd, 'i')
-        const role = msg.channel.guild.roles.find(r => r.name.match(regExp));
+        const roleId = "326588667617607691";
         let guildMember = msg.member;
-        if(!guildMember.roles.includes(role.id))
+        if(!guildMember.roles.includes(roleId))
         {
-            guildMember.addRole(role.id, `Claimed via command`).then(() => {});
+            guildMember.addRole(roleId, `Claimed via command`).then(() => {});
         } else {
-            guildMember.removeRole(role.id, `Removed via command`).then(() => {});
+            guildMember.removeRole(roleId, `Removed via command`).then(() => {});
         }
         msg.channel.createMessage(`\u200B Toggled Magician role for <@${msg.author.id}>`) // eris does escaping for us
 

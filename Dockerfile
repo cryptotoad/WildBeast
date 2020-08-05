@@ -4,7 +4,7 @@ ARG buildno
 ARG commitsha
 
 LABEL maintainer="Remco Jongschaap hello@dougley.com" \
-      repository="https://github.com/TheSharks/WildBeast" \
+      repository="https://github.com/cryptotoad/WildBeast" \
       buildno=$buildno \
       commit=$commitsha
 
